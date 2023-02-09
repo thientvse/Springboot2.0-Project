@@ -26,7 +26,7 @@ public class Comment {
     public String comment;
 
     @Enumerated(EnumType.STRING)
-    private CommentType type;
+    public CommentType type;
 
     @CreatedDate
     private Timestamp createdDate;
