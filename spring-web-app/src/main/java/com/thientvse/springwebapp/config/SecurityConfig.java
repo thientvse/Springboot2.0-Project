@@ -37,11 +37,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**")
                 .hasRole("USER");
     }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws
             Exception {
         auth.authenticationProvider(authenticationProvider());
     }
+
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authenticationProvider = new
@@ -50,10 +52,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         authenticationProvider.setUserDetailsService(userDetailService);
         return authenticationProvider;
     }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
     @Bean
     public ApplicationRunner applicationRunner() {
         return args -> {

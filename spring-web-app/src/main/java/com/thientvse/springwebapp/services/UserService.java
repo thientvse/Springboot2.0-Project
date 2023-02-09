@@ -27,17 +27,16 @@ public class UserService implements UserDetailsService {
 
         User user = userRepository.findByUsername(username);
 
-        if (user == null){
+        if (user == null) {
             throw new UsernameNotFoundException(username);
         }
-
 
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), Arrays.asList(new SimpleGrantedAuthority(user.getRole())));
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public User create(User user){
+    public User create(User user) {
         return userRepository.save(user);
     }
 }

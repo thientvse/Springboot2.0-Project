@@ -22,14 +22,14 @@ public class CommentService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public List<Comment> saveAll(List<Comment> commnents){
+    public List<Comment> saveAll(List<Comment> commnents) {
         LOGGER.info("Saving...", commnents);
         return commentRepository.saveAll(commnents);
     }
 
-    public List<Comment> getAllCommentsForToday(){
+    public List<Comment> getAllCommentsForToday() {
         LocalDate localDate = LocalDate.now();
         return commentRepository.findByCreatedYearAndMonthAndDay(localDate.getYear(),
-                        localDate.getMonth().getValue(), localDate.getDayOfMonth());
+                localDate.getMonth().getValue(), localDate.getDayOfMonth());
     }
 }

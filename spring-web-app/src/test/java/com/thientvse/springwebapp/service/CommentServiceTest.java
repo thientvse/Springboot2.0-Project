@@ -28,12 +28,12 @@ public class CommentServiceTest {
     private CommentService commentService;
 
     @Before
-    public void init(){
+    public void init() {
         commentService = new CommentService(commentRepository);
     }
 
     @Test
-    public void getAllCommentForToday_HappyPath_ShouldReturn1Comment(){
+    public void getAllCommentForToday_HappyPath_ShouldReturn1Comment() {
         // Given
         Comment comment = new Comment();
         comment.setComment("Test");
@@ -54,7 +54,6 @@ public class CommentServiceTest {
                 now.getMonth().getValue(), now.getDayOfMonth());
 
         assertThat(comments).isEqualTo(actualComments);
-
 
 
     }

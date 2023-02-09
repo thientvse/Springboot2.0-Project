@@ -22,12 +22,12 @@ public class UserServiceTest {
 
 
     @Before
-    public void init(){
+    public void init() {
         this.userService = new UserService(userRepository);
     }
 
     @Test
-    public void getAllCommentsForToday_HappyPath_ShouldReturnComment(){
+    public void getAllCommentsForToday_HappyPath_ShouldReturnComment() {
         // Given
         User user = new User();
         user.setUsername("Thientv");
@@ -40,6 +40,6 @@ public class UserServiceTest {
         UserDetails actual = userService.loadUserByUsername("Thientv");
 
         // Then
-        verify(userRepository,times(1)).findByUsername("Thientv");
+        verify(userRepository, times(1)).findByUsername("Thientv");
     }
 }

@@ -30,7 +30,7 @@ public class CommentRepoTest {
 
 
     @Test
-    public void findByCreatedYearAndMonthAndDay_HappyPath_ShouldReturn1Comment(){
+    public void findByCreatedYearAndMonthAndDay_HappyPath_ShouldReturn1Comment() {
         // Given
         Comment comment = new Comment();
         comment.setComment("Test");
